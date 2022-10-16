@@ -1,0 +1,94 @@
+/*
+ *  Nama : Ni Kadek Ari Diah Lestari
+ *  Nim  : 2205551069
+ *  Algoritma Pemrograman (C)
+ */
+
+//Program Menghitung Rumus Luas Permukaan dan Volume Bangun Ruang
+
+#include <stdio.h>
+
+int hit_balok()
+{
+	float luas_permukaan, volume, p, l, t;
+	printf("Masukan Panjang Balok: ");
+	scanf("%f", &p);
+	printf("Masukan Lebar Balok: ");
+	scanf("%f", &l);
+	printf("Masukan Tinggi Balok: ");
+	scanf("%f", &t);
+
+	luas_permukaan = 2*((p*l)+(p*t)+(l*t)); //Rumus Luas Permukaan Balok
+	volume = p*l*t; //Rumus Volume Balok
+
+	printf("__________________________________________________________________\n");
+	printf("         Luas Permukaan Balok : %.2f\n", luas_permukaan);     
+	printf("         Volume Balok         : %.2f\n", volume);
+	printf("__________________________________________________________________\n");
+
+}
+
+int hit_tabung()
+{
+	float phi = 3.14, r, t, luas_permukaan, volume;
+	printf("Masukan Jari-Jari Tabung: ");
+	scanf("%f", &r);
+	printf("Masukan Tinggi Tabung: ");
+	scanf("%f", &t);
+	
+	luas_permukaan = 2*phi*r*(r+t); //Rumus Luas Permukaan Tabung
+	volume = phi*r*r*t; //Rumus Volume Tabung
+
+	printf("__________________________________________________________________\n");
+	printf("         Luas Permukaan Tabung : %.2f\n", luas_permukaan);
+	printf("         Volume Tabung         : %.2f\n", volume);
+	printf("__________________________________________________________________\n");
+
+}
+
+int hit_bola()
+{
+	float phi = 3.14, r, luas_permukaan, volume;
+	printf("Masukan Jari-Jari Bola: ");
+	scanf("%f", &r);
+		
+	luas_permukaan = 4*phi*r*r; //Rumus Luas Permukaan Bola
+	volume = (4*phi*r*r*r)/3; //Rumus Volume Bola
+
+	printf("__________________________________________________________________\n");
+	printf("           Luas Permukaan Bola : %.2f\n", luas_permukaan);
+	printf("           Volume Bola         : %.2f\n", volume);
+	printf("__________________________________________________________________\n");
+
+}
+
+int main(){
+	int bidang_ruang;
+
+	printf(" ________________________________________________________________\n");	
+	printf("| ______________________________________________________________ |\n");
+	printf("||      Program Menghitung Rumus Luas Permukaan dan Volume      ||\n");					
+	printf("||                        BANGUN RUANG                          ||\n");					
+	printf("||..............................................................||\n");					
+	printf("||  Silahkan Pilih Bangun Ruang Yang Ingin Dihitung Dibawah Ini ||\n");								
+	printf("||______________________________________________________________||\n");		
+	printf("|| 1.Balok                                                      ||\n");															
+	printf("|| 2.Tabung                                                     ||\n");															
+	printf("|| 3.Bola                                                       ||\n");	
+	printf("||______________________________________________________________||\n");	
+	printf("|________________________________________________________________|\n");	
+	
+	printf("Pilih Bangun Ruang : ");
+	scanf("%i", &bidang_ruang);
+	
+	if(bidang_ruang == 1){
+		 hit_balok();
+	}else if(bidang_ruang == 2){
+		hit_tabung();
+	}else if(bidang_ruang == 3){
+		hit_bola();
+	}else{
+	printf("Pilihan Tidak Tersedia!");
+	} 
+    return 0;
+}
