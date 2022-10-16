@@ -1,0 +1,90 @@
+/*
+ *  Nama : Ni Kadek Ari Diah Lestari
+ *  Nim  : 2205551069
+ *  Algoritma Pemrograman (C)
+ */
+
+//Program Menghitung Rumus Keliling dan Luas Bangun Datar
+
+#include <stdio.h>
+
+int hit_lingkaran() 
+{
+	float phi = 3.14, r, keliling, luas;
+	printf("Masukan Jari-Jari Lingkaran: ");
+	scanf("%f", &r);
+
+	keliling = 2*phi*r; //Rumus Keliling Lingkaran
+	luas = phi*r*r; //Rumus Luas Lingkaran
+
+	printf("__________________________________________________________________\n");
+	printf("              Keliling Lingkaran : %.2f\n", keliling);
+	printf("              Luas Lingkaran     : %.2f\n", luas);
+  printf("__________________________________________________________________\n");
+
+}
+
+int hit_persegi()
+{
+	float s, keliling, luas;
+	printf("Masukan Sisi Persegi: ");
+	scanf("%f", &s);
+	    
+	keliling = 4*s; //Rumus Keliling Persegi 
+	luas = s*s; //Rumus Luas Persegi 
+
+	printf("__________________________________________________________________\n");
+	printf("             Keliling Persegi : %.2f\n", keliling);
+	printf("             Luas Persegi     : %.2f\n", luas);
+	printf("__________________________________________________________________\n");
+
+}
+
+int hit_persegi_panjang()
+{
+	float p, l, keliling, luas;
+	printf("Masukan Panjang Persegi Panjang: ");
+	scanf("%f", &p);
+	printf("Masukan Lebar Persegi Panjang: ");
+	scanf("%f", &l);
+    
+	keliling = 2*(p+l); //Rumus Keliling Persegi Panjang
+	luas = p*l; //Rumus Luas Persegi Panjang
+
+	printf("__________________________________________________________________\n");
+	printf("         Keliling Persegi Panjang : %.2f\n", keliling);         
+	printf("         Luas Persegi Panjang     : %.2f\n", luas);
+	printf("__________________________________________________________________\n");
+
+}
+
+int main(){
+	int bidang_datar;
+
+	printf(" ________________________________________________________________\n");	
+	printf("| ______________________________________________________________ |\n");
+	printf("||          Program Menghitung Rumus Keliling dan Luas          ||\n");					
+	printf("||                         BANGUN DATAR                         ||\n");					
+	printf("||..............................................................||\n");					
+	printf("||  Silahkan Pilih Bangun Datar Yang Ingin Dihitung Dibawah Ini ||\n");								
+	printf("||______________________________________________________________||\n");		
+	printf("|| 1.Lingkaran                                                  ||\n");															
+	printf("|| 2.Persegi                                                    ||\n");															
+	printf("|| 3.Persegi Panjang                                            ||\n");	
+	printf("||______________________________________________________________||\n");	
+	printf("|________________________________________________________________|\n");	
+	
+	printf("Pilih Bangun Datar : ");
+	scanf("%i", &bidang_datar);
+	
+	if(bidang_datar == 1){
+		 hit_lingkaran();
+	}else if(bidang_datar == 2){
+		hit_persegi();
+	}else if(bidang_datar == 3){
+		hit_persegi_panjang();
+	}else{
+	printf("Pilihan Tidak Tersedia!");
+	} 
+   return 0;
+}
