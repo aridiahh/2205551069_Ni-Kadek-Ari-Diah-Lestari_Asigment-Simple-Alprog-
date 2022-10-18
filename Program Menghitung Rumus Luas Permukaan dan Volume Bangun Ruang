@@ -79,7 +79,7 @@ int main(){
 	printf("|________________________________________________________________|\n");	
 	
 	printf("Pilih Bangun Ruang : ");
-	scanf("%i", &bidang_ruang);
+	scanf("%d", &bidang_ruang);
 	
 	if(bidang_ruang == 1){
 		 hit_balok();
